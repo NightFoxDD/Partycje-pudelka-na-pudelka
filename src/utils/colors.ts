@@ -6,14 +6,10 @@ const COLORS = [
 ];
 
 export const getBlockColor = (dx: number, dy: number, dz: number): string => {
-    // Generate a simple deterministic hash based on dimensions
-    // We sort the dimensions so 1x2x1 and 2x1x1 get the SAME color
     const sorted = [dx, dy, dz].sort((a, b) => a - b);
     
-    // A simple prime-based hash function to distribute colors nicely
     const hash = (sorted[0] * 73856093) ^ (sorted[1] * 19349663) ^ (sorted[2] * 83492791);
     
-    // Ensure positive index
     const index = Math.abs(hash) % COLORS.length;
     return COLORS[index];
 };

@@ -42,8 +42,6 @@ export const Scene: React.FC<SceneProps> = ({ partition, dim }) => {
             <directionalLight position={[10, 10, 10]} intensity={1} />
             <Environment preset="city" />
             <OrbitControls makeDefault enablePan={false} />
-            
-            {/* Bounding box */}
             <mesh position={[0, 0, 0]}>
                 <boxGeometry args={[dim.m, dim.n, dim.k]} />
                 <meshBasicMaterial color="#ffffff" transparent opacity={0.1} wireframe />

@@ -14,7 +14,6 @@ interface PartitionCardProps {
 export const PartitionCard: React.FC<PartitionCardProps> = ({ partition, index, dim }) => {
     const containerRef = useRef<HTMLDivElement>(null);
 
-    // Group dimensions for chips
     const dimCounts: Record<string, { count: number, dims: [number, number, number] }> = {};
     partition.dims.forEach(b => {
         const key = `${b[0]}x${b[1]}x${b[2]}`;
@@ -35,10 +34,6 @@ export const PartitionCard: React.FC<PartitionCardProps> = ({ partition, index, 
                     position: 'relative'
                 }}
             >
-                {/* 
-                  The View component from @react-three/drei portalizes the scene into the global Canvas. 
-                  It tracks its parent container via DOM element.
-                */}
                 <View style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%' }}>
                     <Scene partition={partition} dim={dim} />
                 </View>

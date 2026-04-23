@@ -20,10 +20,10 @@ export const Statistics: React.FC<StatisticsProps> = ({
     return (
         <Box sx={{ mb: 3 }}>
             <Box sx={{ display: 'flex', gap: 2, mb: 2, flexWrap: 'wrap' }}>
-                <StatCard title="Number of Partitions" value={totalPartitions.toString()} />
-                <StatCard title="Average Number of Blocks" value={averageBlocks.toFixed(1)} />
-                <StatCard title="Most Common Size" value={mostCommonSize} />
-                <StatCard title="Computation Time" value={`${computationTime.toFixed(0)}ms`} />
+                <StatCard title="Liczba partycji" value={totalPartitions.toString()} />
+                <StatCard title="Średnia liczba klocków" value={averageBlocks.toFixed(1)} />
+                <StatCard title="Najczęstszy rozmiar" value={mostCommonSize} />
+                <StatCard title="Czas obliczeń" value={`${computationTime.toFixed(0)}ms`} />
             </Box>
             
             {Object.keys(allSizeCounts).length > 0 && (
@@ -33,7 +33,7 @@ export const Statistics: React.FC<StatisticsProps> = ({
                     </Typography>
                     <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 1 }}>
                         {Object.entries(allSizeCounts)
-                            .sort((a, b) => b[1] - a[1]) // Sort by count descending
+                            .sort((a, b) => b[1] - a[1])
                             .map(([size, count], idx) => {
                                 const dims = size.split('x').map(Number);
                                 const color = getBlockColor(dims[0], dims[1], dims[2]);

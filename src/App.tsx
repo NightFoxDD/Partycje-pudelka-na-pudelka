@@ -126,7 +126,6 @@ function App() {
                     <Box sx={{ display: 'grid', gridTemplateColumns: { xs: '1fr', sm: 'repeat(2, 1fr)', md: 'repeat(3, 1fr)', lg: 'repeat(4, 1fr)' }, gap: 3 }}>
                         {sortedPartitions.map((partition, index) => (
                             <Box key={index}>
-                                {/* Używamy submittedDim w PartitionCard, bo partycje odpowiadają wygenerowanym wymiarom */}
                                 <PartitionCard partition={partition} index={index} dim={submittedDim!} />
                             </Box>
                         ))}
@@ -134,7 +133,6 @@ function App() {
                     
                 </Container>
                 
-                {/* Global Canvas for all 3D Views */}
                 <Canvas
                     style={{ position: 'fixed', top: 0, left: 0, width: '100vw', height: '100vh', pointerEvents: 'none', zIndex: 1000 }}
                     eventSource={document.getElementById('root') || undefined}
