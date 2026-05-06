@@ -25,7 +25,7 @@ export const Controls: React.FC<ControlsProps> = ({ dim, setDim, onGenerate }) =
                     name="m" 
                     value={dim.m} 
                     onChange={handleInputChange} 
-                    InputProps={{ inputProps: { min: 1, max: 5 } }}
+                    slotProps={{ htmlInput: { min: 1, max: 5 } }}
                     fullWidth
                 />
                 <TextField 
@@ -34,7 +34,7 @@ export const Controls: React.FC<ControlsProps> = ({ dim, setDim, onGenerate }) =
                     name="n" 
                     value={dim.n} 
                     onChange={handleInputChange} 
-                    InputProps={{ inputProps: { min: 1, max: 5 } }}
+                    slotProps={{ htmlInput: { min: 1, max: 5 } }}
                     fullWidth
                 />
                 <TextField 
@@ -43,7 +43,7 @@ export const Controls: React.FC<ControlsProps> = ({ dim, setDim, onGenerate }) =
                     name="k" 
                     value={dim.k} 
                     onChange={handleInputChange} 
-                    InputProps={{ inputProps: { min: 1, max: 5 } }}
+                    slotProps={{ htmlInput: { min: 1, max: 5 } }}
                     fullWidth
                 />
             </Box>

@@ -1,5 +1,5 @@
 import { useState, useMemo, useRef } from 'react';
-import { Container, Grid, Typography, ThemeProvider, createTheme, CssBaseline, Box, ToggleButtonGroup, ToggleButton, Tooltip } from '@mui/material';
+import { Container, Typography, ThemeProvider, createTheme, CssBaseline, Box, ToggleButtonGroup, ToggleButton, Tooltip } from '@mui/material';
 import SortIcon from '@mui/icons-material/Sort';
 import ArrowDownwardIcon from '@mui/icons-material/ArrowDownward';
 import ArrowUpwardIcon from '@mui/icons-material/ArrowUpward';
@@ -103,7 +103,7 @@ function App() {
                                 color="primary"
                                 value={sortOrder}
                                 exclusive
-                                onChange={(e, newValue) => {
+                                onChange={(_, newValue) => {
                                     if (newValue) setSortOrder(newValue);
                                 }}
                                 size="small"
